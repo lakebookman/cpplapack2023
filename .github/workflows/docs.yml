@@ -1,0 +1,32 @@
+name: Build and Deploy Documentation
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+      
+    - name: Install dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y doxygen python3-sphinx python3-breathe graphviz
+        pip install sphinx-sitemap sphinx_rtd_theme
+
+    - name: Build documentation
+      run: |
+        cd docs/
+        make html
+        
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        personal_token: ${{ secrets.GH_PAGES_TOKEN }}
+        publish_dir: ./docs/build/html/
+        publish_branch: gh-pages
