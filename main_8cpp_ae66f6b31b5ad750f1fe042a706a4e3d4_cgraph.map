@@ -1,0 +1,4 @@
+<map id="main" name="main">
+<area shape="rect" id="node1" title="Main function of the program. Some more text." alt="" coords="5,5,60,32"/>
+<area shape="rect" id="node2" href="$main_8cpp.html#a5c52bee618ad8567aed546af90065114" title="Prints &quot;Hello World&quot; to the console." alt="" coords="108,5,199,32"/>
+</map>
