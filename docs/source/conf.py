@@ -11,6 +11,7 @@ import subprocess, os
 # Doxygen
 subprocess.call('pwd', shell=True)
 subprocess.call('doxygen ../Doxyfile.in', shell=True)
+subprocess.call('ls -R ..', shell=True)
 
 project = 'C++ and Breathe'
 copyright = '2023, Lake Bookman'
