@@ -1,5 +1,6 @@
 template<typename T>
 void axpy(int n, T alpha, const T* x, int incx, T* y, int incy) {
+    //Templated thing probably slow
     int i, ix, iy, m, mp1;
 
     if (n <= 0) return;
